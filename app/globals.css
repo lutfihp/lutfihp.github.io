@@ -1,0 +1,82 @@
+@import "tailwindcss";
+
+/* ── Design tokens ── */
+@theme {
+  --color-bg:          #0a0b0c;
+  --color-surface:     #111315;
+  --color-surface2:    #16191b;
+  --color-line:        rgba(255, 255, 255, 0.08);
+  --color-line-strong: rgba(255, 255, 255, 0.16);
+  --color-ink:         #e7e9ea;
+  --color-muted:       #878d92;
+  --color-accent:      #4ade80;
+
+  --font-sans: var(--font-ibm-plex-sans), system-ui, sans-serif;
+  --font-mono: var(--font-ibm-plex-mono), monospace;
+
+  --max-width-content: 1120px;
+}
+
+/* ── Base ── */
+html { scroll-behavior: smooth; }
+body { background: var(--color-bg); color: var(--color-ink); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
+::selection { background: rgba(74, 222, 128, 0.25); color: #fff; }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb { background: var(--color-line-strong); border-radius: 99px; }
+
+.thin-scroll::-webkit-scrollbar { height: 6px; }
+.thin-scroll::-webkit-scrollbar-thumb { background: var(--color-line-strong); border-radius: 99px; }
+
+/* ── Hero dotted grid ── */
+.grid-bg {
+  background-image:
+    linear-gradient(to right,  rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 32px 32px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 35%, transparent 80%);
+          mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 35%, transparent 80%);
+}
+
+/* ── Striped image placeholder ── */
+.ph {
+  position: relative;
+  background-color: var(--color-surface2);
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.04) 0 1px,
+    transparent 1px 11px
+  );
+  overflow: hidden;
+}
+.ph::after {
+  content: attr(data-label);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-ibm-plex-mono), monospace;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: var(--color-muted);
+  text-transform: lowercase;
+}
+
+/* ── Blinking terminal caret ── */
+.caret { animation: blink 1.15s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+
+/* ── Scroll reveal ── */
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
