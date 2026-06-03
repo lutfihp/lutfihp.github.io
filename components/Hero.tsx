@@ -23,8 +23,8 @@ export function Hero() {
           {data.profile.role}
         </p>
 
-        <div className="max-w-2xl rounded-lg border border-line bg-surface/70 backdrop-blur-sm shadow-2xl shadow-black/40 mb-8">
-          <div className="h-9 bg-surface2/60 border-b border-line flex items-center px-4 gap-1.5">
+        <div className="max-w-2xl rounded-lg border border-line bg-surface shadow-2xl shadow-black/50 ring-1 ring-white/5 mb-8">
+          <div className="h-9 bg-surface2 border-b border-line flex items-center px-4 gap-1.5">
             <span className="w-3 h-3 rounded-full bg-muted/30" />
             <span className="w-3 h-3 rounded-full bg-muted/30" />
             <span className="w-3 h-3 rounded-full bg-muted/30" />
