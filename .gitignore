@@ -21,3 +21,7 @@ npm-debug.log*
 # TypeScript
 *.tsbuildinfo
 next-env.d.ts
+
+# Design handoffs and internal planning docs
+handoffs/
+docs/superpowers/
