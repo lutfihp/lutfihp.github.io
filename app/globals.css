@@ -3,10 +3,10 @@
 /* ── Design tokens ── */
 @theme {
   --color-bg:          #0a0b0c;
-  --color-surface:     #111315;
-  --color-surface2:    #16191b;
-  --color-line:        rgba(255, 255, 255, 0.08);
-  --color-line-strong: rgba(255, 255, 255, 0.16);
+  --color-surface:     #191c1f;
+  --color-surface2:    #23272b;
+  --color-line:        rgba(255, 255, 255, 0.11);
+  --color-line-strong: rgba(255, 255, 255, 0.18);
   --color-ink:         #e7e9ea;
   --color-muted:       #878d92;
   --color-accent:      #4ade80;
