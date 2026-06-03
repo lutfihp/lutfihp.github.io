@@ -41,6 +41,8 @@ __tests__/
 ## Key Design Decisions
 
 - **Design tokens** in `app/globals.css` under `@theme {}` (Tailwind v4 pattern)
+- **Colour tokens (UPDATE-1 applied):** `surface #191c1f`, `surface2 #23272b`, `line rgba(255,255,255,0.11)`, `line-strong rgba(255,255,255,0.18)` — lifted from original values for better card contrast
+- **Hero "about" card (UPDATE-1 applied):** solid `bg-surface` fill, `shadow-black/50`, `ring-1 ring-white/5` edge highlight — no backdrop blur
 - **Scroll reveal** uses `.reveal` / `.reveal.in` CSS classes toggled by `Reveal.tsx`
 - **Images**: `ProjectImage` renders `.ph` striped placeholder when `src` is `null` — drop in a URL to replace
 - **Status row** ("Open to new opportunities") is intentionally omitted from Hero
@@ -95,13 +97,12 @@ Set `image` (card cover) or `screenshots[i].src` to a URL. The `.ph` placeholder
 
 ## What's Left
 
-- [ ] Replace 4 placeholder projects with real ones (slugs, titles, descriptions, repos)
-- [ ] Add real image URLs when available
-- [ ] Set GitHub Pages source to `gh-pages` branch in repo settings
+- [ ] Replace 4 placeholder projects with real ones in `lib/data.ts` (slugs, titles, descriptions, repos)
+- [ ] Add real image URLs when available (`image` and `screenshots[i].src` fields)
+- [ ] Set GitHub Pages source to `gh-pages` branch in repo settings (Settings → Pages → Source: gh-pages / root)
 - [ ] `git push origin main` to trigger first deploy
 
-## Docs
+## Notes
 
-- Design spec: `docs/superpowers/specs/2026-05-31-personal-portfolio-design.md`
-- Implementation plan: `docs/superpowers/plans/2026-05-31-personal-portfolio.md`
-- Handoff from design agent: `handoffs/personal-portfolio/`
+- `handoffs/` and `docs/superpowers/` are gitignored — design handoffs and planning docs live only on disk, not in the repo
+- History was rewritten with `git filter-repo` to remove those folders; force-push will be required on first push to GitHub
