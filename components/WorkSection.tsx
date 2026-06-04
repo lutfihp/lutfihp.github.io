@@ -23,7 +23,14 @@ export function WorkSection() {
                   </p>
                   <span className="font-mono text-xs text-muted whitespace-nowrap">{entry.period}</span>
                 </div>
-                <p className="text-sm text-muted max-w-2xl leading-relaxed">{entry.summary}</p>
+                <ul className="space-y-1.5 max-w-2xl">
+                  {entry.bullets.map((b, j) => (
+                    <li key={j} className="flex gap-2 text-sm text-ink/75 leading-relaxed">
+                      <span className="text-accent mt-0.75 shrink-0">▸</span>
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
               </li>
             </Reveal>
           ))}

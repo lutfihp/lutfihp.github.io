@@ -13,7 +13,6 @@ export interface Project {
   title: string
   tagline: string
   year: string
-  role: string
   image: string | null
   stack: string[]
   description: string
@@ -25,7 +24,7 @@ export interface ExperienceEntry {
   role: string
   company: string
   period: string
-  summary: string
+  bullets: string[]
 }
 
 export interface SkillGroup {
@@ -50,11 +49,11 @@ export interface PortfolioData {
 
 export const data: PortfolioData = {
   profile: {
-    name: 'Lutfi Hilman Prasetya',
+    name: 'Lutfi Prasetya',
     role: 'Full-stack Software Developer',
     location: 'Remote · UTC+7',
     blurb:
-      "I'm a software developer with 10+ years of experience building web and desktop applications across manufacturing, enterprise IT, and SaaS. I work across the full stack — strong roots in C# .NET and Node.js on the backend, React and Next.js on the frontend — and I enjoy building systems that solve real operational problems.",
+      "I'm a software developer with 9+ years of experience building web and desktop applications across manufacturing, enterprise IT, and SaaS. I work across the full stack — strong roots in C# .NET and Node.js on the backend, React and Next.js on the frontend — and I enjoy building systems that solve real operational problems.",
     links: {
       github: 'https://github.com/lutfihp',
       linkedin: 'https://www.linkedin.com/in/lutfihp',
@@ -62,10 +61,10 @@ export const data: PortfolioData = {
   },
 
   skills: [
-    { group: 'Backend',  items: ['C# .NET', 'Node.js', 'NestJS', 'Python', 'FastAPI', 'PHP Laravel'] },
-    { group: 'Frontend', items: ['React', 'Next.js', 'TypeScript', 'Tailwind', 'Blazor'] },
-    { group: 'Data',     items: ['SQL Server', 'PostgreSQL', 'MongoDB', 'Redis', 'SQLite'] },
-    { group: 'Platform', items: ['Docker', 'AWS', 'RabbitMQ', 'Electron', 'CI/CD'] },
+    { group: 'Backend',  items: ['C# .NET', 'Node.js', 'NestJS', 'Python', 'PHP Laravel'] },
+    { group: 'Frontend', items: ['React', 'Next.js', 'TypeScript', 'Tailwind'] },
+    { group: 'Data',     items: ['SQL Server', 'PostgreSQL', 'MySQL', 'MongoDB'] },
+    { group: 'Platform', items: ['Docker', 'AWS', 'Electron', 'CI/CD'] },
   ],
 
   experience: [
@@ -73,84 +72,81 @@ export const data: PortfolioData = {
       role: 'Senior Software Developer',
       company: 'Atech Solution',
       period: 'Dec 2021 — Present',
-      summary:
-        'Building client and internal products in the web department — appointment systems, OCPP integrations, time-tracking tools, web scrapers, and an Electron-based AI desktop app.',
+      bullets: [
+        'Work in the web department to develop client and internal company products.',
+        'Maintain existing .NET Core application.',
+        'Develop appointment system with PHP Laravel for backend and JavaScript, Bootstrap, and jQuery for frontend.',
+        'Develop OCPP application with Python and Next.js.',
+        'Develop time-tracking and work monitoring apps with NestJS and MongoDB.',
+        'Develop web scraper with Python, Playwright, and AWS Lambda.',
+        'Develop Electron-based desktop app for Openclaw AI agent.',
+      ],
     },
     {
       role: 'Backend Developer',
       company: 'Xtremax Teknologi Indonesia',
       period: 'Oct 2018 — Dec 2021',
-      summary:
-        'Developed and maintained .NET Core REST APIs in a microservice architecture with RabbitMQ. Worked across AWS services (Kibana, DynamoDB, S3) and maintained Sitecore CMS platforms.',
+      bullets: [
+        'Work in the backend department and collaborate with other teams such as frontend, QA, DevOps, and system analysts.',
+        'Develop and maintain REST API in .NET Core microservice with RabbitMQ as message broker.',
+        'Work with several AWS services including Kibana, DynamoDB, and S3.',
+        'Develop application that organizes Active Directory with Rcdevs WebAdm.',
+        'Maintain existing ASP.NET website with feature development, bug fixing, and vulnerability updates.',
+        'Maintain existing web powered by Sitecore CMS.',
+        'Prepare deployment instructions and assist web engineers during deployments.',
+        'Prepare queries to create reports from production data (SQL Server).',
+      ],
     },
     {
       role: 'Programmer',
       company: 'Cladtek Bi-Metal Manufacturing',
       period: 'Apr 2015 — Jul 2018',
-      summary:
-        'Built WinForms desktop applications in the R&D department for industrial inspection systems, integrating cameras, microcontrollers, and the MVTec Halcon machine vision library.',
+      bullets: [
+        'Work in R&D department and collaborate with multiple engineering disciplines including electronics and mechanical.',
+        'Develop inspection system desktop application with WinForms .NET for the piping industry.',
+        'Prepare installation files, maintain the application, and conduct user training with workshop operators.',
+        'Interact with external hardware such as industrial cameras and microcontrollers.',
+        'Build 2 applications for communication and video streaming via WiFi.',
+        'Research and test the MVTec Halcon machine vision library.',
+      ],
     },
   ],
 
   projects: [
     {
-      slug: 'project-1',
-      title: 'Project One',
-      tagline: 'Short description of what this project does',
+      slug: 'puanita',
+      title: 'Puanita CMS',
+      tagline: 'Headless CMS for news and articles — API + publishing app',
       year: '2024',
-      role: 'Lead Engineer',
-      image: null,
-      stack: ['Next.js', 'TypeScript', 'PostgreSQL'],
-      description: 'Full project description to be added.',
-      repos: [],
+      image: 'https://cdn.codading.site/img/puan_landing.PNG',
+      stack: ['NestJS', 'Next.js', 'MongoDB', 'Tailwind', 'TypeScript'],
+      description:
+        'Puanita is a headless CMS built for news and article publishing. The backend (puanita-api) is a NestJS REST API backed by MongoDB, handling content management, authentication, and media. The frontend (puanita-app) is a Next.js application providing an editorial dashboard for creating, editing, and publishing articles.',
+      repos: [
+        { label: 'puanita-api', url: 'https://github.com/lutfihp/puanita-api' },
+        { label: 'puanita-app', url: 'https://github.com/lutfihp/puanita-app' },
+      ],
       screenshots: [
-        { src: null, caption: 'Overview' },
-        { src: null, caption: 'Detail view' },
+        { src: 'https://cdn.codading.site/img/puan_landing.PNG', caption: 'Landing' },
+        { src: 'https://cdn.codading.site/img/puan_login.PNG', caption: 'Login' },
+        { src: 'https://cdn.codading.site/img/puan_edit.PNG', caption: 'Article editor' },
+        { src: 'https://cdn.codading.site/img/puan_dashboard.PNG', caption: 'Dashboard' },
       ],
     },
     {
-      slug: 'project-2',
-      title: 'Project Two',
-      tagline: 'Short description of what this project does',
-      year: '2023',
-      role: 'Full-stack Engineer',
-      image: null,
-      stack: ['Python', 'FastAPI', 'React'],
-      description: 'Full project description to be added.',
+      slug: 'mutawazin',
+      title: 'Mutawazin Tutor Platform',
+      tagline: 'Online tutoring platform with teacher & student registration and course scheduling',
+      year: '2026',
+      image: 'https://cdn.codading.site/img/mtwz_landing.PNG',
+      stack: ['Python', 'FastAPI', 'Svelte'],
+      description:
+        'Mutawazin is an online tutoring platform that handles teacher and student registration, course scheduling, and session management. The backend is a FastAPI service managing users, bookings, and availability. The frontend is a Svelte app providing dashboards for both students and teachers.',
       repos: [],
       screenshots: [
-        { src: null, caption: 'Overview' },
-        { src: null, caption: 'Detail view' },
-      ],
-    },
-    {
-      slug: 'project-3',
-      title: 'Project Three',
-      tagline: 'Short description of what this project does',
-      year: '2022',
-      role: 'Backend Engineer',
-      image: null,
-      stack: ['C# .NET', 'Node.js', 'SQL Server'],
-      description: 'Full project description to be added.',
-      repos: [],
-      screenshots: [
-        { src: null, caption: 'Overview' },
-        { src: null, caption: 'Detail view' },
-      ],
-    },
-    {
-      slug: 'project-4',
-      title: 'Project Four',
-      tagline: 'Short description of what this project does',
-      year: '2021',
-      role: 'Creator',
-      image: null,
-      stack: ['NestJS', 'MongoDB', 'Docker'],
-      description: 'Full project description to be added.',
-      repos: [],
-      screenshots: [
-        { src: null, caption: 'Overview' },
-        { src: null, caption: 'Detail view' },
+        { src: 'https://cdn.codading.site/img/mtwz_landing.PNG', caption: 'Landing' },
+        { src: 'https://cdn.codading.site/img/mtwz_login.PNG', caption: 'Login' },
+        { src: 'https://cdn.codading.site/img/mtwz_dashboard.PNG', caption: 'Dashboard' },
       ],
     },
   ],

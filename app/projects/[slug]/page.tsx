@@ -38,7 +38,7 @@ export default async function ProjectPage({
           >
             {project.title}
           </h1>
-          <p className="text-lg text-muted max-w-2xl mb-10">{project.tagline}</p>
+          <p className="text-lg text-ink/75 max-w-2xl mb-10">{project.tagline}</p>
 
           <Carousel screenshots={project.screenshots} title={project.title} />
 
@@ -50,10 +50,6 @@ export default async function ProjectPage({
               </p>
             </div>
             <aside className="space-y-8">
-              <div>
-                <p className="font-mono text-[12px] text-accent mb-2 tracking-wide">Role</p>
-                <p className="text-sm text-ink/90">{project.role}</p>
-              </div>
               <div>
                 <p className="font-mono text-[12px] text-accent mb-2 tracking-wide">Stack</p>
                 <div className="flex flex-wrap gap-2">

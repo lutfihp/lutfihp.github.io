@@ -34,7 +34,7 @@ export function Nav({ variant = 'landing' }: { variant?: 'landing' | 'detail' })
               <a
                 key={label}
                 href={href}
-                className="font-mono text-[13px] text-muted hover:text-ink transition-colors duration-200"
+                className="font-mono text-[13px] text-ink/80 hover:text-ink transition-colors duration-200"
               >
                 {label}
               </a>
@@ -57,7 +57,7 @@ export function Nav({ variant = 'landing' }: { variant?: 'landing' | 'detail' })
                 href={data.profile.links.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-mono text-[13px] text-muted hover:text-accent transition-colors duration-200"
+                className="font-mono text-[13px] text-ink/80 hover:text-accent transition-colors duration-200"
               >
                 GitHub↗
               </a>
@@ -65,7 +65,7 @@ export function Nav({ variant = 'landing' }: { variant?: 'landing' | 'detail' })
                 href={data.profile.links.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-mono text-[13px] text-muted hover:text-accent transition-colors duration-200"
+                className="font-mono text-[13px] text-ink/80 hover:text-accent transition-colors duration-200"
               >
                 LinkedIn↗
               </a>
