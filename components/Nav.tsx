@@ -69,6 +69,14 @@ export function Nav({ variant = 'landing' }: { variant?: 'landing' | 'detail' })
               >
                 LinkedIn↗
               </a>
+              <a
+                href={data.profile.links.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-mono text-[13px] text-ink/80 hover:text-accent transition-colors duration-200"
+              >
+                YouTube↗
+              </a>
             </>
           )}
         </div>

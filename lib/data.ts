@@ -37,7 +37,7 @@ export interface Profile {
   role: string
   location: string
   blurb: string
-  links: { github: string; linkedin: string }
+  links: { github: string; linkedin: string; youtube: string }
 }
 
 export interface PortfolioData {
@@ -57,6 +57,7 @@ export const data: PortfolioData = {
     links: {
       github: 'https://github.com/lutfihp',
       linkedin: 'https://www.linkedin.com/in/lutfihp',
+      youtube: 'https://www.youtube.com/@codading',
     },
   },
 
