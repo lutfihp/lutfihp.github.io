@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { data } from '@/lib/data'
-
+import { ThemeToggle } from '@/components/ThemeToggle'
 
 const anchorLinks = [
   { label: 'work',     href: '/#work' },
@@ -51,6 +51,9 @@ export function Nav({ variant = 'landing' }: { variant?: 'landing' | 'detail' })
               all projects
             </Link>
           )}
+
+          <ThemeToggle />
+
           {variant === 'landing' && (
             <>
               <a
