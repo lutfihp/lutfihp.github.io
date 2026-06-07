@@ -23,11 +23,11 @@ export function Hero() {
           {data.profile.role}
         </p>
 
-        <div className="max-w-2xl rounded-lg border border-line bg-surface shadow-2xl shadow-black/50 ring-1 ring-white/5 mb-8">
+        <div className="max-w-2xl rounded-lg border border-line bg-surface shadow-2xl shadow-black/50 ring-1 ring-line mb-8">
           <div className="h-9 bg-surface2 border-b border-line flex items-center px-4 gap-1.5">
-            <span className="w-3 h-3 rounded-full bg-muted/30" />
-            <span className="w-3 h-3 rounded-full bg-muted/30" />
-            <span className="w-3 h-3 rounded-full bg-muted/30" />
+            <span className="w-3 h-3 rounded-full bg-muted/40" />
+            <span className="w-3 h-3 rounded-full bg-muted/40" />
+            <span className="w-3 h-3 rounded-full bg-muted/40" />
             <span className="font-mono text-xs text-muted ml-2">about.txt</span>
           </div>
           <div className="p-5 font-mono text-[13.5px] leading-relaxed space-y-2">
@@ -56,7 +56,7 @@ export function Hero() {
           </a>
           <a
             href="#contact"
-            className="font-mono text-sm px-4 py-2.5 rounded-md border border-line text-ink hover:border-accent/50 hover:text-accent transition-all duration-200"
+            className="font-mono text-sm px-4 py-2.5 rounded-md border border-line text-ink hover:border-line-strong hover:text-accent transition-all duration-200"
           >
             Get in touch
           </a>
