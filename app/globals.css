@@ -140,7 +140,7 @@ body { background: var(--color-bg); color: var(--color-ink); }
 }
 :root[data-theme="light"] .theme-switch .knob { left: calc(100% - 25px); }
 .theme-switch .knob svg { width: 13px; height: 13px; display: block; }
-.theme-switch .ico-sun  { display: none; }
-.theme-switch .ico-moon { display: block; }
-:root[data-theme="light"] .theme-switch .ico-sun  { display: block; }
-:root[data-theme="light"] .theme-switch .ico-moon { display: none; }
+.theme-switch .knob .ico-sun  { display: none; }
+.theme-switch .knob .ico-moon { display: block; }
+:root[data-theme="light"] .theme-switch .knob .ico-sun  { display: block; }
+:root[data-theme="light"] .theme-switch .knob .ico-moon { display: none; }
