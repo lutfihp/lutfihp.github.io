@@ -1,6 +1,6 @@
 # lutfihp.github.io — Portfolio Site
 
-Personal portfolio for **Lutfi Hilman Prasetya** (`lutfihp`), deployed as a static Next.js 15 site to GitHub Pages.
+Personal portfolio for **Lutfi Prasetya** (`lutfihp`), deployed as a static Next.js 15 site to GitHub Pages.
 
 ## Stack
 
@@ -8,18 +8,22 @@ Personal portfolio for **Lutfi Hilman Prasetya** (`lutfihp`), deployed as a stat
 - **Tailwind v4** — tokens defined in `app/globals.css` via `@theme {}`, no `tailwind.config.ts`
 - **IBM Plex Sans + Mono** via `next/font/google`
 - **GitHub Actions** → deploys `out/` to `gh-pages` branch on push to `main`
-- Live at: `https://lutfihp.github.io` (once pushed)
+- Live at: `https://lutfihp.github.io`
 
 ## Project Structure
 
 ```
 app/
-  layout.tsx               fonts, metadata
+  layout.tsx               fonts, metadata, viewport, no-flash theme script
   page.tsx                 landing page
-  globals.css              Tailwind v4 tokens + custom classes
+  globals.css              Tailwind v4 tokens + light/dark theme vars + custom classes
+  globals.d.ts             window.__toggleTheme type declaration
+  icon.svg                 SVG favicon (green "L" mark on dark tile)
+  apple-icon.png           180×180 iOS home-screen icon
   projects/[slug]/page.tsx project detail (generateStaticParams)
 components/
-  Nav.tsx                  landing + detail variants
+  Nav.tsx                  landing + detail variants, includes ThemeToggle
+  ThemeToggle.tsx          'use client' pill switch — moon/sun, MutationObserver sync
   Footer.tsx
   SectionHeader.tsx        kicker + h2 + optional descriptor
   ProjectImage.tsx         <Image> if src set, else .ph placeholder
@@ -34,6 +38,7 @@ lib/
   data.ts                  ALL content lives here — edit this to update the site
 __tests__/
   Carousel.test.tsx        6 passing tests
+  ThemeToggle.test.tsx     4 passing tests
 .github/workflows/
   deploy.yml               CI deploy to gh-pages
 ```
@@ -41,8 +46,11 @@ __tests__/
 ## Key Design Decisions
 
 - **Design tokens** in `app/globals.css` under `@theme {}` (Tailwind v4 pattern)
-- **Colour tokens (UPDATE-1 applied):** `surface #191c1f`, `surface2 #23272b`, `line rgba(255,255,255,0.11)`, `line-strong rgba(255,255,255,0.18)` — lifted from original values for better card contrast
-- **Hero "about" card (UPDATE-1 applied):** solid `bg-surface` fill, `shadow-black/50`, `ring-1 ring-white/5` edge highlight — no backdrop blur
+- **Colour tokens (UPDATE-1 applied):** `surface #191c1f`, `surface2 #23272b`, `line rgba(255,255,255,0.11)`, `line-strong rgba(255,255,255,0.18)`
+- **Light/dark mode (UPDATE-2 applied):** CSS variable overrides on `:root[data-theme="light"]` drive all colour tokens. Dark is default. A no-flash inline `<script>` in `<head>` sets `data-theme` before first paint; `ThemeToggle` client component calls `window.__toggleTheme()`. Choice persists in `localStorage`, falls back to `prefers-color-scheme`.
+- **Token rule:** never use literal `white` or `black` with opacity modifiers — always go through a theme token (`ring-line`, `bg-muted/40`, `border-line-strong`, etc.)
+- **Favicon (UPDATE-3 applied):** `app/icon.svg` + `app/apple-icon.png` via App Router metadata icons convention (Next.js auto-generates `<link>` tags). `themeColor` in `viewport` export.
+- **Hero "about" card:** solid `bg-surface` fill, `shadow-black/50`, `ring-1 ring-line` edge highlight — no backdrop blur
 - **Scroll reveal** uses `.reveal` / `.reveal.in` CSS classes toggled by `Reveal.tsx`
 - **Images**: `ProjectImage` renders `.ph` striped placeholder when `src` is `null` — drop in a URL to replace
 - **Status row** ("Open to new opportunities") is intentionally omitted from Hero
@@ -53,7 +61,7 @@ __tests__/
 ```bash
 npm run dev       # dev server (Turbopack, port 3000)
 npm run build     # static export → out/
-npm test          # jest (carousel tests)
+npm test          # jest — 10 tests (Carousel ×6, ThemeToggle ×4)
 npx tsc --noEmit  # type check
 ```
 
@@ -63,7 +71,7 @@ npx tsc --noEmit  # type check
 git push origin main   # triggers GitHub Actions → deploys to gh-pages
 ```
 
-GitHub Pages must be configured: Settings → Pages → Source: **gh-pages branch / root**.
+GitHub Pages is configured: Settings → Pages → Source: **gh-pages branch / root**.
 
 ## Content — How to Update
 
@@ -99,10 +107,8 @@ Set `image` (card cover) or `screenshots[i].src` to a URL. The `.ph` placeholder
 
 - [ ] Replace 4 placeholder projects with real ones in `lib/data.ts` (slugs, titles, descriptions, repos)
 - [ ] Add real image URLs when available (`image` and `screenshots[i].src` fields)
-- [ ] Set GitHub Pages source to `gh-pages` branch in repo settings (Settings → Pages → Source: gh-pages / root)
-- [ ] `git push origin main` to trigger first deploy
 
 ## Notes
 
 - `handoffs/` and `docs/superpowers/` are gitignored — design handoffs and planning docs live only on disk, not in the repo
-- History was rewritten with `git filter-repo` to remove those folders; force-push will be required on first push to GitHub
+- Handoff updates applied so far: UPDATE-1 (card contrast), UPDATE-2 (light/dark mode), UPDATE-3 (favicon)
