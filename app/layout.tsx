@@ -21,9 +21,9 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: 'Lutfi Hilman Prasetya — Full-stack Software Developer',
+  title: 'Lutfi Prasetya — Full-stack Software Developer',
   description:
-    'Personal portfolio of Lutfi Hilman Prasetya, a full-stack software developer with 10+ years of experience building web and desktop applications.',
+    'Personal portfolio of Lutfi Prasetya, a full-stack software developer with 9+ years of experience building web and desktop applications.',
 }
 
 const themeScript = `(function(){
