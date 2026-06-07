@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { IBM_Plex_Sans, IBM_Plex_Mono } from 'next/font/google'
 import './globals.css'
 
@@ -16,11 +16,14 @@ const ibmPlexMono = IBM_Plex_Mono({
   display: 'swap',
 })
 
+export const viewport: Viewport = {
+  themeColor: '#0a0b0c',
+}
+
 export const metadata: Metadata = {
   title: 'Lutfi Hilman Prasetya — Full-stack Software Developer',
   description:
     'Personal portfolio of Lutfi Hilman Prasetya, a full-stack software developer with 10+ years of experience building web and desktop applications.',
-  themeColor: '#0a0b0c',
 }
 
 const themeScript = `(function(){
