@@ -20,6 +20,7 @@ export const metadata: Metadata = {
   title: 'Lutfi Hilman Prasetya — Full-stack Software Developer',
   description:
     'Personal portfolio of Lutfi Hilman Prasetya, a full-stack software developer with 10+ years of experience building web and desktop applications.',
+  themeColor: '#0a0b0c',
 }
 
 const themeScript = `(function(){
