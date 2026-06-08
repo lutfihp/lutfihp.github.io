@@ -15,7 +15,7 @@ export function Nav({ variant = 'landing' }: { variant?: 'landing' | 'detail' })
       <div className="mx-auto max-w-content px-5 sm:px-8 h-full flex items-center justify-between">
 
         {variant === 'landing' ? (
-          <Link href="/" className="font-mono text-sm group">
+          <Link href="/" className="hidden sm:block font-mono text-sm group">
             <span className="text-accent">~/</span>
             <span className="group-hover:text-accent transition-colors duration-200">lutfihp</span>
           </Link>
@@ -42,7 +42,7 @@ export function Nav({ variant = 'landing' }: { variant?: 'landing' | 'detail' })
           </nav>
         )}
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-4 ml-auto">
           {variant === 'detail' && (
             <Link
               href="/#projects"
@@ -51,8 +51,6 @@ export function Nav({ variant = 'landing' }: { variant?: 'landing' | 'detail' })
               all projects
             </Link>
           )}
-
-          <ThemeToggle />
 
           {variant === 'landing' && (
             <>
@@ -82,6 +80,8 @@ export function Nav({ variant = 'landing' }: { variant?: 'landing' | 'detail' })
               </a>
             </>
           )}
+
+          <ThemeToggle />
         </div>
 
       </div>
