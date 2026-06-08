@@ -10,12 +10,14 @@ interface ProjectImageProps {
 export function ProjectImage({ src, alt, label, className = '' }: ProjectImageProps) {
   if (src) {
     return (
-      <Image
-        src={src}
-        alt={alt}
-        fill
-        className={`object-cover transition-transform duration-300 group-hover:scale-[1.04] ${className}`}
-      />
+      <div className={`absolute inset-0 bg-surface ${className}`}>
+        <Image
+          src={src}
+          alt={alt}
+          fill
+          className="object-contain transition-transform duration-300 group-hover:scale-[1.04]"
+        />
+      </div>
     )
   }
   return (
