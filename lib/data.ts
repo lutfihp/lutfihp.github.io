@@ -1,6 +1,7 @@
-export interface Repo {
+export interface ProjectLink {
   label: string
   url: string
+  type: 'github' | 'live' | 'youtube' | 'other'
 }
 
 export interface Screenshot {
@@ -16,7 +17,7 @@ export interface Project {
   image: string | null
   stack: string[]
   description: string
-  repos: Repo[]
+  links: ProjectLink[]
   screenshots: Screenshot[]
 }
 
@@ -123,9 +124,9 @@ export const data: PortfolioData = {
       stack: ['NestJS', 'Next.js', 'MongoDB', 'Tailwind', 'TypeScript'],
       description:
         'Puanita is a headless CMS built for news and article publishing. The backend (puanita-api) is a NestJS REST API backed by MongoDB, handling content management, authentication, and media. The frontend (puanita-app) is a Next.js application providing an editorial dashboard for creating, editing, and publishing articles.',
-      repos: [
-        { label: 'puanita-api', url: 'https://github.com/lutfihp/puanita-api' },
-        { label: 'puanita-app', url: 'https://github.com/lutfihp/puanita-app' },
+      links: [
+        { label: 'puanita-api', url: 'https://github.com/lutfihp/puanita-api', type: 'github' },
+        { label: 'puanita-app', url: 'https://github.com/lutfihp/puanita-app', type: 'github' },
       ],
       screenshots: [
         { src: 'https://cdn.codading.site/img/puan_landing.PNG', caption: 'Landing' },
@@ -143,7 +144,7 @@ export const data: PortfolioData = {
       stack: ['Python', 'FastAPI', 'Svelte'],
       description:
         'Mutawazin is an online tutoring platform that handles teacher and student registration, course scheduling, and session management. The backend is a FastAPI service managing users, bookings, and availability. The frontend is a Svelte app providing dashboards for both students and teachers.',
-      repos: [],
+      links: [],
       screenshots: [
         { src: 'https://cdn.codading.site/img/mtwz_landing.PNG', caption: 'Landing' },
         { src: 'https://cdn.codading.site/img/mtwz_login.PNG', caption: 'Login' },
