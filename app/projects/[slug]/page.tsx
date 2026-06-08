@@ -4,6 +4,13 @@ import { Nav } from '@/components/Nav'
 import { Footer } from '@/components/Footer'
 import { Carousel } from '@/components/Carousel'
 
+const LINK_BADGE: Record<'github' | 'live' | 'youtube' | 'other', string> = {
+  github: 'github',
+  live: 'live',
+  youtube: 'youtube',
+  other: 'link',
+}
+
 export function generateStaticParams() {
   return data.projects.map((p) => ({ slug: p.slug }))
 }
@@ -63,22 +70,22 @@ export default async function ProjectPage({
                   ))}
                 </div>
               </div>
-              {project.repos.length > 0 && (
+              {project.links.length > 0 && (
                 <div>
-                  <p className="font-mono text-[12px] text-accent mb-2 tracking-wide">Repositories</p>
+                  <p className="font-mono text-[12px] text-accent mb-2 tracking-wide">Links</p>
                   <div className="space-y-2">
-                    {project.repos.map((repo) => (
+                    {project.links.map((link) => (
                       <a
-                        key={repo.label}
-                        href={repo.url}
+                        key={link.label}
+                        href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group flex items-center justify-between border border-line bg-surface rounded-md px-4 py-3 hover:border-accent/50 transition-all duration-200"
                       >
                         <span className="font-mono text-sm group-hover:text-accent transition-colors duration-200">
-                          <span className="text-accent">⌥</span> {repo.label}
+                          <span className="text-accent">⌥</span> {link.label}
                         </span>
-                        <span className="font-mono text-xs text-muted">github ↗</span>
+                        <span className="font-mono text-xs text-muted">{LINK_BADGE[link.type]} ↗</span>
                       </a>
                     ))}
                   </div>
