@@ -42,7 +42,7 @@ export function Nav({ variant = 'landing' }: { variant?: 'landing' | 'detail' })
           </nav>
         )}
 
-        <div className="flex items-center gap-4 ml-auto">
+        <div className="flex items-center gap-4 ml-auto sm:ml-0">
           {variant === 'detail' && (
             <Link
               href="/#projects"
