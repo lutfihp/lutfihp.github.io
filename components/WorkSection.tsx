@@ -14,7 +14,7 @@ export function WorkSection() {
         <ol className="relative border-l border-line ml-[5px]">
           {data.experience.map((entry, i) => (
             <Reveal key={i} delay={i * 80}>
-              <li className="relative pl-8 sm:pl-10 pb-10 last:pb-0">
+              <li className="relative pl-8 sm:pl-10 pb-16 last:pb-0">
                 <span className="absolute -left-[4.5px] top-1.5 w-[9px] h-[9px] rounded-full bg-accent ring-4 ring-bg" />
                 <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 mb-1.5">
                   <p className="text-base font-semibold text-ink">
