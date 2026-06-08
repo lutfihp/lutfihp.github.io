@@ -26,7 +26,7 @@ components/
   ThemeToggle.tsx          'use client' pill switch — moon/sun, MutationObserver sync
   Footer.tsx
   SectionHeader.tsx        kicker + h2 + optional descriptor
-  ProjectImage.tsx         <Image> if src set, else .ph placeholder
+  ProjectImage.tsx         <Image> if src set (object-contain, bg-surface letterbox), else .ph placeholder
   Reveal.tsx               'use client' scroll-in IntersectionObserver
   Hero.tsx                 terminal card, dotted grid, CTAs
   ProjectsSection.tsx      4-card grid
@@ -52,7 +52,8 @@ __tests__/
 - **Favicon (UPDATE-3 applied):** `app/icon.svg` + `app/apple-icon.png` via App Router metadata icons convention (Next.js auto-generates `<link>` tags). `themeColor` in `viewport` export.
 - **Hero "about" card:** solid `bg-surface` fill, `shadow-black/50`, `ring-1 ring-line` edge highlight — no backdrop blur
 - **Scroll reveal** uses `.reveal` / `.reveal.in` CSS classes toggled by `Reveal.tsx`
-- **Images**: `ProjectImage` renders `.ph` striped placeholder when `src` is `null` — drop in a URL to replace
+- **Images (UPDATE-4 applied):** `ProjectImage` uses `object-contain` inside an `absolute inset-0 bg-surface` wrapper — full image visible, letterboxed with surface colour. Renders `.ph` striped placeholder when `src` is `null`.
+- **Project links (UPDATE-5 applied):** `Project` has `links: ProjectLink[]` (replaces old `repos: Repo[]`). Each link: `{ label, url, type: 'github' | 'live' | 'youtube' | 'other' }`. Detail page renders a "Links" section with a type badge (`github ↗`, `live ↗`, etc.).
 - **Status row** ("Open to new opportunities") is intentionally omitted from Hero
 - **No basePath** needed — this is a user page (`lutfihp.github.io`), not a project subpath
 
@@ -86,12 +87,14 @@ Each project entry:
   title: 'Project Name',
   tagline: 'One-liner',
   year: '2024',
-  role: 'Your Role',
   image: null,                // set to image URL to show real image
   stack: ['Tech', 'Stack'],
   description: 'Full description.',
-  repos: [                    // 0, 1, or 2 repos
-    { label: 'repo-name', url: 'https://github.com/lutfihp/repo' },
+  links: [                    // any mix of link types; omit array items you don't need
+    { label: 'repo-name',  url: 'https://github.com/lutfihp/repo', type: 'github' },
+    { label: 'Live Demo',  url: 'https://example.com',             type: 'live' },
+    { label: 'Walkthrough',url: 'https://youtube.com/...',         type: 'youtube' },
+    { label: 'Other',      url: 'https://...',                     type: 'other' },
   ],
   screenshots: [
     { src: null, caption: 'Caption' },   // set src to image URL
@@ -105,10 +108,11 @@ Set `image` (card cover) or `screenshots[i].src` to a URL. The `.ph` placeholder
 
 ## What's Left
 
-- [ ] Replace 4 placeholder projects with real ones in `lib/data.ts` (slugs, titles, descriptions, repos)
+- [ ] Add more real projects to `lib/data.ts` (currently 2: puanita, mutawazin)
 - [ ] Add real image URLs when available (`image` and `screenshots[i].src` fields)
+- [ ] Add live/youtube links to existing projects via the `links` array
 
 ## Notes
 
 - `handoffs/` and `docs/superpowers/` are gitignored — design handoffs and planning docs live only on disk, not in the repo
-- Handoff updates applied so far: UPDATE-1 (card contrast), UPDATE-2 (light/dark mode), UPDATE-3 (favicon)
+- Handoff updates applied so far: UPDATE-1 (card contrast), UPDATE-2 (light/dark mode), UPDATE-3 (favicon), UPDATE-4 (image object-contain), UPDATE-5 (unified project links)
