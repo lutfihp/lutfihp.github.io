@@ -39,6 +39,7 @@ lib/
 __tests__/
   Carousel.test.tsx        6 passing tests
   ThemeToggle.test.tsx     4 passing tests
+  ContactSection.test.tsx  1 passing test (mailto link)
 .github/workflows/
   deploy.yml               CI deploy to gh-pages
 ```
@@ -54,6 +55,7 @@ __tests__/
 - **Scroll reveal** uses `.reveal` / `.reveal.in` CSS classes toggled by `Reveal.tsx`
 - **Images (UPDATE-4 applied):** `ProjectImage` uses `object-contain` inside an `absolute inset-0 bg-surface` wrapper — full image visible, letterboxed with surface colour. Renders `.ph` striped placeholder when `src` is `null`.
 - **Project links (UPDATE-5 applied):** `Project` has `links: ProjectLink[]` (replaces old `repos: Repo[]`). Each link: `{ label, url, type: 'github' | 'live' | 'youtube' | 'other' }`. Detail page renders a "Links" section with a type badge (`github ↗`, `live ↗`, etc.).
+- **Contact email (UPDATE-7 applied):** `Profile.links.email` added to `lib/data.ts`. `ContactSection` renders it as a `font-mono text-accent` `mailto:` link above the GitHub/LinkedIn pills. Description `<p>` uses `mb-4`, email link uses `mb-8` to maintain spacing before pills.
 - **Status row** ("Open to new opportunities") is intentionally omitted from Hero
 - **No basePath** needed — this is a user page (`lutfihp.github.io`), not a project subpath
 
@@ -62,7 +64,7 @@ __tests__/
 ```bash
 npm run dev       # dev server (Turbopack, port 3000)
 npm run build     # static export → out/
-npm test          # jest — 10 tests (Carousel ×6, ThemeToggle ×4)
+npm test          # jest — 11 tests (Carousel ×6, ThemeToggle ×4, ContactSection ×1)
 npx tsc --noEmit  # type check
 ```
 
@@ -126,4 +128,4 @@ All image URLs use `https://cdn.codading.site/img/<filename>` pattern.
 ## Notes
 
 - `handoffs/` and `docs/superpowers/` are gitignored — design handoffs and planning docs live only on disk, not in the repo
-- Handoff updates applied so far: UPDATE-1 (card contrast), UPDATE-2 (light/dark mode), UPDATE-3 (favicon), UPDATE-4 (image object-contain), UPDATE-5 (unified project links), UPDATE-6 (super-battle added as #1, puanita moved to #3)
+- Handoff updates applied so far: UPDATE-1 (card contrast), UPDATE-2 (light/dark mode), UPDATE-3 (favicon), UPDATE-4 (image object-contain), UPDATE-5 (unified project links), UPDATE-6 (super-battle added as #1, puanita moved to #3), UPDATE-7 (email in contact section)
