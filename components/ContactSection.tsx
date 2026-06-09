@@ -15,9 +15,15 @@ export function ContactSection() {
         >
           Let&apos;s build something solid.
         </h2>
-        <p className="text-base text-muted max-w-md mb-8">
+        <p className="text-base text-muted max-w-md mb-4">
           Open to new opportunities and interesting projects.
         </p>
+        <a
+          href={`mailto:${data.profile.links.email}`}
+          className="font-mono text-sm text-accent hover:text-accent/70 hover:underline transition-colors mb-8"
+        >
+          {data.profile.links.email} ↗
+        </a>
         <div className="flex flex-wrap items-center justify-center gap-4">
           <a
             href={data.profile.links.github}
