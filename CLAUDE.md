@@ -106,13 +106,24 @@ Each project entry:
 
 Set `image` (card cover) or `screenshots[i].src` to a URL. The `.ph` placeholder disappears automatically.
 
+## Current Projects (UPDATE-6 applied)
+
+Three real projects in `lib/data.ts`, ordered:
+
+| # | Slug | Title | Year | Images | Live |
+|---|---|---|---|---|---|
+| 1 | `super-battle` | SuperBattle | 2026 | ✓ (5 screenshots) | `superbattle.codading.site` |
+| 2 | `mutawazin` | Mutawazin Tutor Platform | 2026 | ✓ (3 screenshots) | — |
+| 3 | `puanita` | Puanita CMS | 2024 | ✓ (4 screenshots) | — |
+
+All image URLs use `https://cdn.codading.site/img/<filename>` pattern.
+
 ## What's Left
 
-- [ ] Add more real projects to `lib/data.ts` (currently 2: puanita, mutawazin)
-- [ ] Add real image URLs when available (`image` and `screenshots[i].src` fields)
-- [ ] Add live/youtube links to existing projects via the `links` array
+- [ ] Add live/youtube links to mutawazin when available
+- [ ] Add more projects as they are built
 
 ## Notes
 
 - `handoffs/` and `docs/superpowers/` are gitignored — design handoffs and planning docs live only on disk, not in the repo
-- Handoff updates applied so far: UPDATE-1 (card contrast), UPDATE-2 (light/dark mode), UPDATE-3 (favicon), UPDATE-4 (image object-contain), UPDATE-5 (unified project links)
+- Handoff updates applied so far: UPDATE-1 (card contrast), UPDATE-2 (light/dark mode), UPDATE-3 (favicon), UPDATE-4 (image object-contain), UPDATE-5 (unified project links), UPDATE-6 (super-battle added as #1, puanita moved to #3)
