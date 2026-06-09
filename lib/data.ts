@@ -127,7 +127,7 @@ export const data: PortfolioData = {
       links: [
         { label: 'super-battle-app', url: 'https://github.com/lutfihp/super-battle-app', type: 'github' },
         { label: 'super-battle-api', url: 'https://github.com/lutfihp/super-battle-api', type: 'github' },
-        { label: 'Live',             url: 'https://superbattle.codading.site',             type: 'live' },
+        { label: 'website',          url: 'https://superbattle.codading.site',             type: 'live' },
       ],
       screenshots: [
         { src: 'https://cdn.codading.site/img/sb_landing.PNG',   caption: 'Landing' },
@@ -146,7 +146,9 @@ export const data: PortfolioData = {
       stack: ['Python', 'FastAPI', 'Svelte'],
       description:
         'Mutawazin is an online tutoring platform that handles teacher and student registration, course scheduling, and session management. The backend is a FastAPI service managing users, bookings, and availability. The frontend is a Svelte app providing dashboards for both students and teachers.',
-      links: [],
+      links: [
+        { label: 'website', url: 'https://mutawazinprivate.com', type: 'live' },
+      ],
       screenshots: [
         { src: 'https://cdn.codading.site/img/mtwz_landing.PNG',   caption: 'Landing' },
         { src: 'https://cdn.codading.site/img/mtwz_login.PNG',     caption: 'Login' },
