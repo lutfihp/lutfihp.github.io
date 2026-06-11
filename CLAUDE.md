@@ -108,24 +108,32 @@ Each project entry:
 
 Set `image` (card cover) or `screenshots[i].src` to a URL. The `.ph` placeholder disappears automatically.
 
-## Current Projects (UPDATE-6 applied)
+## Current Projects (UPDATE-8 applied)
 
-Three real projects in `lib/data.ts`, ordered:
+Eight projects in `lib/data.ts`, ordered:
 
-| # | Slug | Title | Year | Images | Live |
+| # | Slug | Title | Year | Screenshots | Live |
 |---|---|---|---|---|---|
-| 1 | `super-battle` | SuperBattle | 2026 | ✓ (5 screenshots) | `superbattle.codading.site` |
-| 2 | `mutawazin` | Mutawazin Tutor Platform | 2026 | ✓ (3 screenshots) | — |
-| 3 | `puanita` | Puanita CMS | 2024 | ✓ (4 screenshots) | — |
+| 1 | `super-battle` | SuperBattle | 2026 | 5 | `superbattle.codading.site` |
+| 2 | `mutawazin` | Mutawazin Tutor Platform | 2026 | 3 | `mutawazinprivate.com` |
+| 3 | `puanita` | Puanita CMS | 2024 | 4 | — |
+| 4 | `codading-company` | Codading Company Profile | 2026 | 4 | `codading.site` |
+| 5 | `concept-cafe` | Concept Cafe | 2026 | 4 | `concept-cafe.codading.site` |
+| 6 | `concept-clinic` | Concept Clinic | 2026 | 3 | `concept-clinic.codading.site` |
+| 7 | `concept-school` | Concept School | 2026 | 4 | `concept-school.codading.site` |
+| 8 | `concept-wedding-planner` | Concept Wedding Planner | 2026 | 4 | `concept-wedding-planner.codading.site` |
 
-All image URLs use `https://cdn.codading.site/img/<filename>` pattern.
+All image URLs use `https://cdn.codading.site/img/<filename>.PNG` pattern.
+
+Projects #5–#8 are concept/demo sites built for Codading's client portfolio — taglines explicitly say "Concept site —" to signal intent.
 
 ## What's Left
 
+- [ ] Upload CDN images for projects #4–#8 (`cdd_*`, `cafe_*`, `clinic_*`, `sch_*`, `wed_*`)
 - [ ] Add live/youtube links to mutawazin when available
 - [ ] Add more projects as they are built
 
 ## Notes
 
 - `handoffs/` and `docs/superpowers/` are gitignored — design handoffs and planning docs live only on disk, not in the repo
-- Handoff updates applied so far: UPDATE-1 (card contrast), UPDATE-2 (light/dark mode), UPDATE-3 (favicon), UPDATE-4 (image object-contain), UPDATE-5 (unified project links), UPDATE-6 (super-battle added as #1, puanita moved to #3), UPDATE-7 (email in contact section)
+- Handoff updates applied so far: UPDATE-1 (card contrast), UPDATE-2 (light/dark mode), UPDATE-3 (favicon), UPDATE-4 (image object-contain), UPDATE-5 (unified project links), UPDATE-6 (super-battle added as #1, puanita moved to #3), UPDATE-7 (email in contact section), UPDATE-8 (five new projects added: codading-company + 4 concept sites)
