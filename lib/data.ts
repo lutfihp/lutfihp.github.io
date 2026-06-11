@@ -176,5 +176,104 @@ export const data: PortfolioData = {
         { src: 'https://cdn.codading.site/img/puan_dashboard.PNG', caption: 'Dashboard' },
       ],
     },
+    {
+      slug: 'codading-company',
+      title: 'Codading Company Profile',
+      tagline: 'Company profile site for Codading — a software house based in Indonesia',
+      year: '2026',
+      image: 'https://cdn.codading.site/img/cdd_landing.PNG',
+      stack: ['Next.js', 'TypeScript', 'Tailwind'],
+      description:
+        'Official company profile for Codading, a software house based in Indonesia. The site is bilingual (ID/EN) and covers services, the project portfolio, and a contact section. Built with Next.js 15 static export and deployed at codading.site.',
+      links: [
+        { label: 'codading-company', url: 'https://github.com/lutfihp/codading-company', type: 'github' },
+        { label: 'website',          url: 'https://codading.site',                        type: 'live' },
+      ],
+      screenshots: [
+        { src: 'https://cdn.codading.site/img/cdd_landing.PNG',   caption: 'Landing' },
+        { src: 'https://cdn.codading.site/img/cdd_services.PNG',  caption: 'Services' },
+        { src: 'https://cdn.codading.site/img/cdd_portfolio.PNG', caption: 'Portfolio' },
+        { src: 'https://cdn.codading.site/img/cdd_contact.PNG',   caption: 'Contact' },
+      ],
+    },
+    {
+      slug: 'concept-cafe',
+      title: 'Concept Cafe',
+      tagline: 'Concept site — bilingual cafe portfolio with menu filtering and image carousel',
+      year: '2026',
+      image: 'https://cdn.codading.site/img/cafe_landing.PNG',
+      stack: ['Next.js', 'TypeScript', 'Tailwind', 'Embla Carousel'],
+      description:
+        "Concept demo built for Codading's client portfolio. A bilingual (ID/EN) cafe brand site with a categorised menu page and a full-screen image carousel. Static export, no server runtime.",
+      links: [
+        { label: 'concept-cafe', url: 'https://github.com/lutfihp/concept-cafe', type: 'github' },
+        { label: 'website',      url: 'https://concept-cafe.codading.site',      type: 'live' },
+      ],
+      screenshots: [
+        { src: 'https://cdn.codading.site/img/cafe_landing.PNG',   caption: 'Landing' },
+        { src: 'https://cdn.codading.site/img/cafe_about.PNG',     caption: 'About' },
+        { src: 'https://cdn.codading.site/img/cafe_menu.PNG',      caption: 'Menu' },
+        { src: 'https://cdn.codading.site/img/cafe_testimoni.PNG', caption: 'Testimonials' },
+      ],
+    },
+    {
+      slug: 'concept-clinic',
+      title: 'Concept Clinic',
+      tagline: 'Concept site — skin & aesthetics clinic with Framer Motion animations and article system',
+      year: '2026',
+      image: 'https://cdn.codading.site/img/clinic_landing.PNG',
+      stack: ['Next.js', 'TypeScript', 'Tailwind', 'Framer Motion'],
+      description:
+        'Concept demo for "NOIRE", a fictional skin and aesthetics clinic. Features Framer Motion scroll animations across 12 landing sections and a dedicated multi-article system with individual article pages.',
+      links: [
+        { label: 'concept-clinic', url: 'https://github.com/lutfihp/concept-clinic', type: 'github' },
+        { label: 'website',        url: 'https://concept-clinic.codading.site',      type: 'live' },
+      ],
+      screenshots: [
+        { src: 'https://cdn.codading.site/img/clinic_landing.PNG',  caption: 'Landing' },
+        { src: 'https://cdn.codading.site/img/clinic_services.PNG', caption: 'Services' },
+        { src: 'https://cdn.codading.site/img/clinic_articles.PNG', caption: 'Articles' },
+      ],
+    },
+    {
+      slug: 'concept-school',
+      title: 'Concept School',
+      tagline: 'Concept site — integrated school with routing-based i18n, lightbox gallery, and program pages',
+      year: '2026',
+      image: 'https://cdn.codading.site/img/sch_landing.PNG',
+      stack: ['Next.js', 'TypeScript', 'Tailwind', 'next-intl'],
+      description:
+        'Concept demo for "Sekolah Bina Pandu Utama", a fictional integrated middle school and high school in Bandung. Routing-based bilingual i18n via next-intl, lightbox photo gallery, achievement carousel, and dedicated program pages across 10 sections.',
+      links: [
+        { label: 'concept-school', url: 'https://github.com/lutfihp/concept-school', type: 'github' },
+        { label: 'website',        url: 'https://concept-school.codading.site',      type: 'live' },
+      ],
+      screenshots: [
+        { src: 'https://cdn.codading.site/img/sch_landing.PNG',  caption: 'Landing' },
+        { src: 'https://cdn.codading.site/img/sch_programs.PNG', caption: 'Programs' },
+        { src: 'https://cdn.codading.site/img/sch_gallery.PNG',  caption: 'Gallery' },
+        { src: 'https://cdn.codading.site/img/sch_news.PNG',     caption: 'News' },
+      ],
+    },
+    {
+      slug: 'concept-wedding-planner',
+      title: 'Concept Wedding Planner',
+      tagline: 'Concept site — wedding organizer with filterable gallery, packages, and FAQ',
+      year: '2026',
+      image: 'https://cdn.codading.site/img/wed_landing.PNG',
+      stack: ['Next.js', 'TypeScript', 'Tailwind'],
+      description:
+        'Concept demo for "Tresna", a fictional wedding organizer in Bandung. Filterable gallery, package showcase, accordion FAQ, and a mobile-first responsive drawer navigation across 10 sections.',
+      links: [
+        { label: 'concept-wedding-planner', url: 'https://github.com/lutfihp/concept-wedding-planner', type: 'github' },
+        { label: 'website',                 url: 'https://concept-wedding-planner.codading.site',      type: 'live' },
+      ],
+      screenshots: [
+        { src: 'https://cdn.codading.site/img/wed_landing.PNG', caption: 'Landing' },
+        { src: 'https://cdn.codading.site/img/wed_gallery.PNG', caption: 'Gallery' },
+        { src: 'https://cdn.codading.site/img/wed_package.PNG', caption: 'Packages' },
+        { src: 'https://cdn.codading.site/img/wed_faq.PNG',     caption: 'FAQ' },
+      ],
+    },
   ],
 }
